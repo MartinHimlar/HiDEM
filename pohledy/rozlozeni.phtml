@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<base href="/localhost" />
+        <meta name="description" content="HiDEM s.r.o." />
+        <meta name="keywords" content="Daňe, Účetnictví, Mzdy" />
+        <meta name="googlebot" content="snippet,archive" />
+  
+	<title><?php echo $titulek; ?> - HiDEM s.r.o.</title>
+
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	
+</head>
+
+<body>
+    <header>
+        <p> </p>
+    </header> 
+    <nav>
+	
+        <span class="citac">Počítadlo: 
+            <!-- BlueBoard.cz Pocitadlo -->
+              <span id="bbpocitadlo-span-ejf84c9eepj22hfn03047emfih2pun"><a id="bbpocitadlo-ejf84c9eepj22hfn03047emfih2pun" href="http://miniaplikace.blueboard.cz"></a></span>
+              <script type="text/javascript" src="http://miniaplikace.blueboard.cz/counter_1.php?jid=ejf84c9eepj22hfn03047emfih2pun"></script>
+            <!-- BlueBoard.cz Pocitadlo KONEC -->
+        </span>
+        
+        <a <?php if($url === 'uvod') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../uvod">HLAVNÍ STRÁNKA</a>
+	<a <?php if($url === 'dane') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../dane">DAŇE</a>
+	<a <?php if($url === 'ucetnictvi') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../ucetnictvi">ÚČETNICTVÍ</a>
+	<a <?php if($url === 'mzdy') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../mzdy">MZDY</a>
+	<a <?php if($url === 'provize') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../provize">PROVIZE</a>
+	<a <?php if($url === 'odkazy') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../odkazy">ODKAZY</a>
+        <a <?php if($url === 'kontakty') echo 'class="menu_active"'; else echo 'class="menu_a"'; ?> href="../kontakty">KONTAKTY</a>  
+      
+    </nav>
+    <section>
+      
+	<div class="obsah1"> </div>
+        <div class="obsah2">
+            <?php $this->kontroler->vypisPohled(); // vložení aktuálního pohledu do šablony ?>
+        </div>
+	<div class="obsah3">
+
+                <div id="blok-bbsluzba-jnbenx6ipcduiovxh7v0jue3o8eatx"></div>
+
+                <a id="odkaz-bbsluzba-jnbenx6ipcduiovxh7v0jue3o8eatx" href="http://miniaplikace.blueboard.cz">Miniaplikace</a>
+
+                <script type="text/javascript" src="http://miniaplikace.blueboard.cz/widget-pocasi-jnbenx6ipcduiovxh7v0jue3o8eatx"></script>
+
+                <br style="clear: both;" />
+            
+      </div>
+        <br style="clear: both;" />
+    
+    </section>
+    <footer>
+	<p>Vytvořil Martin Himlar pro HiDEM s.r.o.</p>
+    </footer>
+</body>
+</html>
