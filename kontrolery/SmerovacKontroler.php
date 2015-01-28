@@ -9,7 +9,7 @@ class SmerovacKontroler extends Kontroler
     protected $kontroler;
 
     // Metoda převede pomlčkovou variantu controlleru na název třídy
-    private function pomlckyDoVelbloudiNotace($text)
+    private function optimalizeLink($text)
     {
         $veta = str_replace('-', ' ', $text);
         $veta = ucwords($veta);
@@ -30,15 +30,15 @@ class SmerovacKontroler extends Kontroler
     {
         $url = $this->parsujURL($parametry[0]);
 
-        if($url === 'vchod'){
-            header("Location: http://89.29.52.230");
-            header("Connection: close");
-        }
-
         if (empty($url[0]))
             $this->presmeruj('uvod');
 
-        $controler = $this->pomlckyDoVelbloudiNotace(array_shift($url)) . 'Kontroler';
+        $controler = $this->optimalizeLink(array_shift($url)) . 'Kontroler';
+
+        if ($controler === 'vchod') {
+            header("Location: http://89.29.52.230");
+            header("Connection: close");
+        }
 
         if (file_exists('kontrolery/' . $controler . '.php'))
             $this->kontroler = new $controler;
