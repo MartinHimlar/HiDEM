@@ -1,5 +1,5 @@
 body {
-    font-family: verdana;
+    font-family: Verdana, Arial;
     font-size: 14px;
     margin: 0 auto;
     color: #040024;
@@ -9,7 +9,7 @@ body {
 nav {
     width: 100%;
     font-size: 16px;
-    font-family: verdana;
+    font-family: Verdana, Arial;
     text-align: center;
     border-color: #dc9035;
     border-width: 2px 0px 2px 0px;
@@ -25,7 +25,7 @@ footer {
 }
 
 section {
-    text-shadow: 3px 3px 3px #cccccc;
+    /*text-shadow: 3px 3px 3px #cccccc;    */
     margin: 0px auto;
     border-width: 0px 0px 2px 0px;
     border-color: #dc9035;
@@ -52,7 +52,7 @@ header p {
 
 .dp_li {
     color: #000;
-    text-shadow: 3px 3px 3px #cccccc;
+    text-shadow: 0px 0px 0px #cccccc;
 }
 
 .obsah1 {
@@ -148,4 +148,14 @@ header p {
 h2, h3 {
     color: #dc9035;
     text-shadow: 2px 2px 4px #fdd479;
+}
+
+.alert-danger {
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	border: solid 1px #dc9035;
+	background-color: #fdf58a;
+	color: #CC0000;
+	text-shadow: #FFAFAF 1px 1px 3px;
 }
