@@ -32,4 +32,18 @@ abstract class Kontroler
 	// Hlavní metoda controlleru
     abstract function zpracuj($parametry);
 
+	public function flashMessage(DateTime $toDate, $message=NULL)
+	{
+		$now = new DateTime();
+
+		if($now >= $toDate)
+			return FALSE;
+
+		$body = '<div class="alert-danger">';
+		$body .= $message;
+		$body .= '</div><br /><br />';
+
+		return $body;
+	}
+
 }

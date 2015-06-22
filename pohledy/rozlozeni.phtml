@@ -44,7 +44,16 @@
 
 	<div class="obsah1"></div>
 	<div class="obsah2">
-		<?php $this->kontroler->vypisPohled(); // vložení aktuálního pohledu do šablony ?>
+		<?php
+		$zprava = '<strong>Upozornění</strong><br />Ode dne 29. 6. do 3. 7. 2015 bude účetní kancelář z důvodu firemní dovolené uzavřena.<br /> Děkujeme za pochopení.';
+
+		$message = $this->kontroler->flashMessage(new DateTime("2015-7-3"), $zprava);
+
+		if ($message)
+			echo $message;
+
+		$this->kontroler->vypisPohled(); // vložení aktuálního pohledu do šablony
+		?>
 	</div>
 	<div class="obsah3">
 		<ul class="cont">
@@ -62,6 +71,16 @@
 					+420 777 715 550<br />
 					<a href="mailto:info@hidem.cz">info@hidem.cz</a><br />
 					Fax: 596 415 552
+				</p>
+			</li>
+
+			<li>
+				<p><u>Adresa:</u><br />
+					Lidická 43c<br />
+					Havířov - Šumbark<br />
+					736 01<br /><br />
+					IČ: 25285891<br />
+					DIČ: CZ25285891<br />
 				</p>
 			</li>
 		</ul>
