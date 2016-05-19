@@ -1,13 +1,15 @@
+<IfModule mod_rewrite.c>
 
-Options -Indexes
+        RewriteEngine On
 
-RewriteEngine On
-RewriteBase /
+        RewriteRule ^$ www/ [L]
 
-# front controller
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule !\.(pdf|js|ico|gif|jpg|png|css|rar|zip|tar\.gz)$ index.php [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
 
+        RewriteCond %{REQUEST_FILENAME} !-d
 
-AddType application/x-httpd-php .php .phtml
+        RewriteCond %{REQUEST_URI} !^www/
+
+        RewriteRule ^(.*)$ www/$1
+
+</IfModule>
