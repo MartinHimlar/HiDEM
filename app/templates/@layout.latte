@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="HiDEM s.r.o."/>
+	<meta name="keywords" content="daňe, dane, účetnictví, ucetnictvi, mzdy, Havířov, Havirov"/>
+
+	<title>{ifset title}{include title|striptags} | {/ifset}HiDEM s.r.o.</title>
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+	{block head}{/block}
+</head>
+
+<body>
+	<header>
+		<p></p>
+	</header>
+	<nav>
+		<a n:href="default" {ifCurrent default}class="menu_active" {else}class="menu_a"{/ifCurrent}>HLAVNÍ STRÁNKA</a>
+		<a n:href="taxation" {ifCurrent taxation}class="menu_active" {else}class="menu_a"{/ifCurrent}>DANĚ</a>
+		<a n:href="accounting" {ifCurrent accounting}class="menu_active" {else}class="menu_a"{/ifCurrent}>ÚČETNICTVÍ</a>
+		<a n:href="payroll" {ifCurrent payroll}class="menu_active" {else}class="menu_a"{/ifCurrent}>MZDY</a>
+		<a n:href="commission" {ifCurrent commission}class="menu_active" {else}class="menu_a"{/ifCurrent}>PROVIZE</a>
+		<a n:href="links" {ifCurrent links}class="menu_active" {else}class="menu_a"{/ifCurrent}>ODKAZY</a>
+		<a n:href="map" {ifCurrent map}class="menu_active" {else}class="menu_a"{/ifCurrent}>MAPA</a>
+
+	</nav>
+	<section>
+
+		<div class="obsah1"></div>
+		<div class="obsah2">
+			<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">{$flash->message}</div>
+			{include content}
+		</div>
+		<div class="obsah3">
+			<ul class="cont">
+				<li>
+					<p><u>Jednatel</u><br />
+						Přemysl Himlar<br />
+						+420 777 715 545<br />
+						<a href="mailto:hidem@hidem.cz">hidem@hidem.cz</a>
+					</p>
+				</li>
+
+				<li>
+					<p><u>Sekretariát</u><br />
+						596 415 551<br />
+						+420 777 715 550<br />
+						<a href="mailto:info@hidem.cz">info@hidem.cz</a><br />
+						Fax: 596 415 552
+					</p>
+				</li>
+
+				<li>
+					<p><u>Adresa:</u><br />
+						Lidická 43c<br />
+						Havířov - Šumbark<br />
+						736 01<br /><br />
+						IČ: 25285891<br />
+						DIČ: CZ25285891<br />
+					</p>
+				</li>
+			</ul>
+
+			<br style="clear: both;"/>
+
+		</div>
+		<br style="clear: both;"/>
+	</section>
+	<footer>
+		<p>Vytvořil Martin Himlar pro HiDEM s.r.o.</p>
+	</footer>
+
+
+	{block scripts}
+
+
+	<!-- GOOGLE ANALYTICS -->
+	<script>
+		(function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-77928659-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+	{/block}
+</body>
+</html>
